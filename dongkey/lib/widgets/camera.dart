@@ -25,18 +25,25 @@ class _CameraVerificationPageState extends State<CameraVerificationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('학생인증'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 255, 177, 0),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 20),
+            Image.asset('assets/민증.png'),
             ElevatedButton(
               onPressed: () {
                 getImage(ImageSource.camera); // Pass ImageSource.camera
               },
               child: Text('카메라로 학생증을 인증해주세요.'),
+              style: ElevatedButton.styleFrom(
+                primary: const Color.fromARGB(255, 255, 177, 0),
+              ),
             ),
-            showImage(),
+            // showImage(),
           ],
         ),
       ),
